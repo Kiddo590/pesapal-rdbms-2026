@@ -1,0 +1,27 @@
+{
+  "rows": [
+    {
+      "id": 1,
+      "name": "Test Data",
+      "value": 200
+    }
+  ],
+  "next_id": 2,
+  "columns": [
+    {
+      "name": "id",
+      "type": "INT",
+      "primary": true
+    },
+    {
+      "name": "name",
+      "type": "TEXT",
+      "primary": false
+    },
+    {
+      "name": "value",
+      "type": "INT",
+      "primary": false
+    }
+  ]
+}

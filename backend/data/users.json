@@ -1,0 +1,39 @@
+{
+  "rows": [
+    {
+      "id": 4,
+      "name": "me",
+      "email": "egesa.phillip1@gmail.com",
+      "age": 24,
+      "created_at": "34"
+    }
+  ],
+  "next_id": 5,
+  "columns": [
+    {
+      "name": "id",
+      "type": "INT",
+      "primary": true
+    },
+    {
+      "name": "name",
+      "type": "TEXT",
+      "primary": false
+    },
+    {
+      "name": "email",
+      "type": "TEXT",
+      "primary": false
+    },
+    {
+      "name": "age",
+      "type": "INT",
+      "primary": false
+    },
+    {
+      "name": "created_at",
+      "type": "TIMESTAMP",
+      "primary": false
+    }
+  ]
+}
