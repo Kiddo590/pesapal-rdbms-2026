@@ -1,20 +1,7 @@
-📊 System Architecture
-text
-┌─────────────────────────────────────────────────────────────┐
-│                    Vue.js Frontend (Vite)                   │
-├─────────────────────────────────────────────────────────────┤
-│  • Database Explorer     • Query Editor      • Test Suite   │
-│  • Schema Visualizer    • Real-time Results • Performance   │
-├─────────────────────────────────────────────────────────────┤
-│                 FastAPI Backend (Python)                    │
-├─────────────────────────────────────────────────────────────┤
-│  • Custom RDBMS Engine • SQL Parser        • CRUD Operations│
-│  • Constraint Engine  • Join Optimization • Indexing        │
-├─────────────────────────────────────────────────────────────┤
-│                  Persistent Storage Layer                   │
-└─────────────────────────────────────────────────────────────┘
-✨ Comprehensive Features
-🗄️ Advanced Database Engine
+Comprehensive Features
+
+Advanced Database Engine
+
 Custom SQL Parser - Full SQL-like query language with syntax validation
 
 Multi-Data Type Support - INTEGER, TEXT, BOOLEAN, FLOAT, TIMESTAMP, NULL
@@ -29,7 +16,8 @@ Join Operations - INNER JOIN, LEFT JOIN with query optimization
 
 Data Persistence - JSON-based storage with automatic file management
 
-🎛️ Professional Management Interface
+Professional Management Interface
+
 Interactive Query Editor - Syntax highlighting, query history, auto-completion
 
 Schema Visualization - Drag-and-drop table relationship mapping
@@ -42,7 +30,8 @@ Data Export/Import - JSON, SQL, and CSV format support
 
 Responsive Design - Mobile-first interface with dark mode support
 
-🔌 Robust API Layer
+Robust API Layer
+
 RESTful Endpoints - Full CRUD operations with proper HTTP semantics
 
 WebSocket Support - Real-time data synchronization
@@ -53,8 +42,10 @@ Rate Limiting - Request throttling and security headers
 
 CORS Configuration - Secure cross-origin resource sharing
 
-🚀 Quick Deployment
+Quick Deployment
+
 Prerequisites
+
 Python 3.11+ (Recommended: 3.11 or higher)
 
 Node.js 18+ (LTS version recommended)
@@ -64,7 +55,9 @@ npm 9+ or yarn 1.22+
 Git for version control
 
 Installation & Setup
+
 Option 1: Quick Start (Recommended)
+
 bash
 # Clone the repository
 git clone https://github.com/yourusername/pesapal-rdbms-challenge.git
@@ -83,6 +76,7 @@ npm install
 # Start both servers
 cd frontend ..and npm run dev & cd ../backend && python start.py
 Option 2: Docker Deployment
+
 bash
 # Using Docker Compose
 docker-compose up --build
@@ -91,7 +85,8 @@ docker-compose up --build
 docker build -t rdbms-backend ./backend
 docker build -t rdbms-frontend ./frontend
 Configuration
-env
+
+text
 # Backend Configuration (backend/.env)
 DATABASE_PATH=./data
 MAX_CONNECTIONS=100
@@ -101,9 +96,12 @@ ENABLE_LOGGING=true
 # Frontend Configuration (frontend/.env)
 VITE_API_BASE=http://localhost:8000
 VITE_APP_NAME=Pesapal RDBMS
-📖 User Guide
+User Guide
+
 Database Operations
-1. Table Creation
+
+Table Creation
+
 sql
 -- Create table with multiple data types and constraints
 CREATE TABLE users (
@@ -113,7 +111,8 @@ CREATE TABLE users (
     age INTEGER CHECK (age >= 18),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
-2. Data Manipulation
+Data Manipulation
+
 sql
 -- Insert with auto-increment
 INSERT INTO users (username, email, age) 
@@ -126,7 +125,8 @@ INNER JOIN orders o ON u.id = o.user_id
 WHERE u.age > 25
 ORDER BY o.amount DESC
 LIMIT 10;
-3. Performance Optimization
+Performance Optimization
+
 sql
 -- Create index for faster queries
 CREATE INDEX idx_users_email ON users(email);
@@ -134,7 +134,9 @@ CREATE INDEX idx_users_email ON users(email);
 -- Query with index utilization
 EXPLAIN SELECT * FROM users WHERE email = 'test@example.com';
 Web Interface Usage
+
 Database Explorer
+
 Browse Tables: View all tables with row counts and schemas
 
 Schema Inspection: Click tables to view column details and constraints
@@ -142,6 +144,7 @@ Schema Inspection: Click tables to view column details and constraints
 Data Preview: Paginated view of table data with sorting and filtering
 
 Query Editor
+
 Syntax Highlighting: Color-coded SQL keywords and functions
 
 Query History: Persistent storage of executed queries
@@ -149,14 +152,17 @@ Query History: Persistent storage of executed queries
 Result Export: Download results as JSON, CSV, or SQL
 
 Test Dashboard
+
 Comprehensive Testing: Automated test suite covering all RDBMS features
 
 Performance Benchmarking: Compare query execution times with/without indexes
 
 Validation Suite: Test constraint enforcement and error handling
 
-🔧 Development
+Development
+
 Project Structure
+
 text
 pesapal-rdbms/
 ├── backend/
@@ -181,7 +187,9 @@ pesapal-rdbms/
 │   └── vite.config.js       # Build configuration
 └── docker-compose.yml       # Container orchestration
 API Documentation
+
 Core Endpoints
+
 Method	Endpoint	Description	Authentication
 GET	/api/tables	List all tables	None
 POST	/api/tables	Create new table	None
@@ -192,6 +200,7 @@ DELETE	/api/tables/{name}/rows	Delete rows	None
 POST	/api/query	Execute SQL query	None
 GET	/api/test-comprehensive	Run test suite	None
 Example API Usage
+
 javascript
 // Create table via API
 const response = await fetch('http://localhost:8000/api/tables', {
@@ -207,27 +216,33 @@ const response = await fetch('http://localhost:8000/api/tables', {
     })
 });
 Testing
+
 Backend Tests
+
 bash
 cd backend
 python -m pytest tests/ -v
 python test_rdbms.py  # Comprehensive test suite
 Frontend Tests
+
 bash
 cd frontend
 npm run test:unit
 npm run test:e2e
 Performance Testing
+
 bash
 # Run performance benchmarks
 python -m pytest tests/test_performance.py --benchmark
-📊 Performance Metrics
+Performance Metrics
+
 Operation	Average Time	With Index	Improvement
 SELECT (10k rows)	45ms	8ms	82%
 INSERT (batch)	120ms	110ms	8%
 UPDATE (conditional)	65ms	12ms	81%
 JOIN (2 tables)	95ms	22ms	77%
-🛡️ Security Features
+Security Features
+
 Input Validation: Comprehensive SQL injection prevention
 
 Constraint Enforcement: Data integrity at database level
@@ -238,7 +253,8 @@ CORS Configuration: Secure cross-origin requests
 
 File System Sandboxing: Isolated data storage
 
-🔍 Monitoring & Logging
+Monitoring & Logging
+
 python
 # Enable detailed logging
 import logging
@@ -253,8 +269,10 @@ async def log_queries(request: Request, call_next):
     process_time = time.time() - start_time
     logger.info(f"Query: {request.url.path} - {process_time:.2f}s")
     return response
-📈 Scaling & Production Deployment
+Scaling & Production Deployment
+
 Horizontal Scaling
+
 yaml
 # docker-compose.prod.yml
 version: '3.8'
@@ -286,6 +304,7 @@ services:
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf
 Database Migration
+
 bash
 # Export current schema
 curl http://localhost:8000/api/export/schema > schema_backup.json
@@ -294,8 +313,10 @@ curl http://localhost:8000/api/export/schema > schema_backup.json
 curl -X POST http://new-instance:8000/api/import/schema \
   -H "Content-Type: application/json" \
   -d @schema_backup.json
-🎯 Use Cases
+Use Cases
+
 Educational Platform
+
 Database Fundamentals: Learn RDBMS concepts hands-on
 
 SQL Training: Practice SQL in a safe environment
@@ -303,6 +324,7 @@ SQL Training: Practice SQL in a safe environment
 Architecture Study: Understand database internals
 
 Development Sandbox
+
 Prototype Testing: Quickly test database schemas
 
 Query Optimization: Experiment with indexing strategies
@@ -310,13 +332,14 @@ Query Optimization: Experiment with indexing strategies
 Migration Planning: Test schema changes before production
 
 Production Applications
+
 Small-scale Applications: Lightweight database for prototypes
 
 Embedded Systems: Resource-constrained environments
 
 Specialized Use Cases: Custom database requirements
 
-🤝 Contributing
+Contributing
 We welcome contributions! Please see our Contributing Guidelines for details.
 
 Fork the repository
@@ -329,18 +352,16 @@ Push to branch (git push origin feature/amazing-feature)
 
 Open a Pull Request
 
-📄 License
+License
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-🙏 Acknowledgments
+Acknowledgments
+
 Pesapal for the challenging opportunity
 
 Vue.js & FastAPI communities for excellent documentation
 
-
-📞 Support
+Support
 For support, email egesa.phillip1@gmail.com or create an issue in the GitHub repository.
 
 Made with passion for the Pesapal Junior Developer Challenge 2026
-
-Building the future of database technology, one line at a time.

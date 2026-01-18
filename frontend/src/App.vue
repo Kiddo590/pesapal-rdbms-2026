@@ -62,7 +62,7 @@
                 </svg>
                 Demo App
               </router-link>
-              <!-- ADDED: Test Dashboard Link -->
+              
               <router-link 
                 to="/tests" 
                 class="inline-flex items-center px-3 py-2 text-sm font-medium rounded-md transition-colors"
